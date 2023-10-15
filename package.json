@@ -10,6 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2"
-  }
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.3"
+  },
+  "prettier": {
+  "tabWidth": 2,
+  "singleQuote": false,
+  "trailingComma": "all"
+ }
 }
