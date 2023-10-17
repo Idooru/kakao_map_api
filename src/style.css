@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+
+.info_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#info_list {
+    max-width: 200px;
+    padding: 40px;
+    border: 1px solid black;
+}
+
+#map {
+    width: 800px;
+    height: 800px;
+    border-radius: 40px;
+    border: 1px solid black;
+    margin-left: 50px;
+}
