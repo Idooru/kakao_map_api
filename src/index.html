@@ -1,10 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-    <h1>adasd</h1>
-</body>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./request-api.js"></script>
+  </head>
+  <body>
+    <h1>카카오 맵 사용하기</h1>
+    <div class="info_area">
+      <div id="info_list">정보 구성</div>
+      <div id="map"></div>
+    </div>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63b8ebc69249405099357fc9285963b1"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
 </html>
