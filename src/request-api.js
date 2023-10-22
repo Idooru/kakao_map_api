@@ -1,7 +1,7 @@
 const requestBackend = async () => {
   const { data } = await axios
     .get(
-      "http://localhost:8082/search-api?x=127.06283102249932&y=37.514322572335935&radius=1000&size=10&keyword=중식&page=1",
+      "http://localhost:8080/search-api?x=127.06283102249932&y=37.514322572335935&radius=1000&size=10&keyword=중식&page=1",
     )
     .catch((err) => console.error(err));
 
