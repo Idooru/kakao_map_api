@@ -8,9 +8,18 @@
   </head>
   <body>
     <h1>카카오 맵 사용하기</h1>
-    <div class="info_area">
-      <div id="info_list">정보 구성</div>
-      <div id="map"></div>
+    <div id="map">
+      <div class="shop_info_area">
+        <div class="shop_info_head">
+          <h1 id="search_keyword"></h1>
+          <select id="option" name="option">
+            <option>찾기 옵션</option>
+            <option>거리순</option>
+            <option>좋아요순</option>
+          </select>
+        </div>
+        <div class="shop_info_list"></div>
+      </div>
     </div>
     <script
       type="text/javascript"
