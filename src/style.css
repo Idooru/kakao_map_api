@@ -1,24 +1,104 @@
-h1 {
-    text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.info_area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-#info_list {
-    max-width: 200px;
-    padding: 40px;
-    border: 1px solid black;
+body {
+  background: #ffe16f;
 }
 
 #map {
-    width: 800px;
-    height: 800px;
-    border-radius: 40px;
-    border: 1px solid black;
-    margin-left: 50px;
+  width: 1920px;
+  height: 868px;
+  /*border: 5px solid #e0c69d;*/
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.shop_info_area {
+  position: absolute;
+  width: 500px;
+  height: 730px;
+  padding: 40px;
+  background: #f6efdd;
+  border-radius: 20px;
+  z-index: 999;
+  top: 20px;
+  left: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.shop_info_area .shop_info_head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 7.5px;
+  border-bottom: 2px solid rgba(199, 193, 156, 0.65);
+}
+
+.shop_info_area .shop_info_head #search_keyword {
+  width: 260px;
+  font-size: 27px;
+  color: #8a7961;
+}
+
+.shop_info_area .shop_info_head #option {
+  outline: none;
+  text-align: center;
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  background: rgba(199, 193, 156, 0.65);
+  -webkit-appearance: none;
+  font-weight: bold;
+  color: #8a7961;
+}
+
+.shop_info_area .shop_info_list {
+  margin-top: 20px;
+  height: 670px;
+  overflow: auto;
+}
+
+.shop_info_area .shop_info_list .shop_info_item {
+  height: 140px;
+  margin: 20px;
+  padding: 13px;
+  background: #e0d5d0;
+  border-radius: 6px;
+}
+
+.shop_info_area .shop_info_list .shop_info_item #place_name {
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.shop_info_area .shop_info_list .shop_info_item .middle_item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.shop_info_area .shop_info_list .shop_info_item .middle_item #address_name {
+  letter-spacing: -2px;
+  color: #777747;
+}
+
+.shop_info_area .shop_info_list .shop_info_item .middle_item #distance {
+  color: yellowgreen;
+}
+
+.shop_info_area .shop_info_list .shop_info_item .under_item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.shop_info_area .shop_info_list .shop_info_item .under_item #phone {
+  color: orange;
+  display: inline-block;
+}
+
+.shop_info_area .shop_info_list .shop_info_item .under_item #detail {
+  /*margin-left: 80px;*/
+  color: deepskyblue;
 }
