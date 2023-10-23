@@ -1,30 +1,35 @@
 import { displayPage } from "./display.mjs";
 
-const getData = async ({ myX, myY }) => {
+const getData = async ({ myX, myY, page, keyword }) => {
   const { data } = await axios
     .get(
-      `http://localhost:8080/search-api?x=${myX}&y=${myY}&radius=1000&size=15&keyword=일식&page=1`,
+      `http://localhost:8080/search-api?x=${myX}&y=${myY}&radius=200&size=15&keyword=${keyword}&page=${page}`,
     )
     .catch((err) => console.error(err));
 
   return data;
 };
 
-const requestBackend = async () => {
-  const myX = 127.02829779581167;
-  const myY = 37.499855842189014;
-  const myCoordinate = { myX, myY };
+export const requestBackend = async (page) => {
+  if (!page) {
+    page = "1";
+  }
 
-  const data = await getData(myCoordinate);
-
-  const keyword = data.result.keyword;
-  const shops = data.result.documents;
-
-  const shopInfo = {
-    shops,
-    keyword,
+  const request = {
+    myX: 127.02829779581167,
+    myY: 37.499855842189014,
+    page: page,
+    keyword: "한식",
   };
 
+  const data = await getData(request);
+  const shops = data.result.documents;
+  const shopInfo = {
+    shops,
+    keyword: request.keyword,
+  };
+
+  const myCoordinate = { myX: request.myX, myY: request.myY };
   displayPage(shopInfo, myCoordinate);
   return { shopInfo, myCoordinate };
 };
