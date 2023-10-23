@@ -35,9 +35,10 @@ const displayShopInfo = ({ shops, keyword }) => {
     const shopInfoItemEle = document.createElement("div");
     shopInfoItemEle.className = "shop_info_item";
 
-    const placeNameEle = document.createElement("p");
+    const placeNameEle = document.createElement("a");
     placeNameEle.id = "place_name";
     placeNameEle.innerText = item.place_name;
+    placeNameEle.setAttribute("href", "#");
 
     const middleItemEle = document.createElement("div");
     middleItemEle.className = "middle_item";
@@ -65,6 +66,7 @@ const displayShopInfo = ({ shops, keyword }) => {
     const detailPageEle = document.createElement("a");
     detailPageEle.id = "detail";
     detailPageEle.innerText = "상세 페이지";
+    detailPageEle.setAttribute("href", "#");
 
     const underItemComposition = [phoneEle, detailPageEle];
     underItemComposition.forEach((composition) =>
