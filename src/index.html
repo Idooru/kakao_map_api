@@ -6,21 +6,31 @@
     <link rel="stylesheet" href="./style.css" />
     <script defer src="./request-api.mjs" type="module"></script>
     <script defer src="./select-option.mjs" type="module"></script>
+    <script defer src="./page.mjs" type="module"></script>
   </head>
   <body>
     <h1>카카오 맵 사용하기</h1>
     <div id="map">
       <div class="shop_info_area">
         <div class="shop_info_head">
-          <h1 id="search_keyword"></h1>
-          <label for="option"></label
-          ><select id="option" name="option">
-            <option value="">찾기 옵션</option>
-            <option value="distance">거리순</option>
-            <option value="like">좋아요순</option>
-          </select>
+          <div class="head_box">
+            <h1 id="search_keyword"></h1>
+            <label for="option"></label
+            ><select id="option" name="option">
+              <option value="">찾기 옵션</option>
+              <option value="distance">거리순</option>
+              <option value="like">좋아요순</option>
+            </select>
+          </div>
         </div>
         <div class="shop_info_list"></div>
+        <div class="shop_info_footer">
+          <div class="shop_page">
+            <button value="1">1</button>
+            <button value="2">2</button>
+            <button value="3">3</button>
+          </div>
+        </div>
       </div>
     </div>
     <script
