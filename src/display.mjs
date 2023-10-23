@@ -89,7 +89,7 @@ const displayMap = (shops, myCoordinate) => {
   const container = document.querySelector("#map");
   const options = {
     center: new kakao.maps.LatLng(myY, myX),
-    level: 4,
+    level: 1,
   };
 
   const map = new kakao.maps.Map(container, options);
