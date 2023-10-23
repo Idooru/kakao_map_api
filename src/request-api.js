@@ -100,8 +100,8 @@ const displayMap = (shops, myCoordinate) => {
 const displayMyCoordinate = (map, { myX, myY }) => {
   const { kakao } = window;
   const imageSrc =
-    "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png"; // 마커이미지의 주소입니다
-  const imageSize = new kakao.maps.Size(64, 69); // 마커이미지의 크기입니다
+    "https://cdn.icon-icons.com/icons2/2104/PNG/512/map_location_icon_129048.png"; // 마커이미지의 주소입니다
+  const imageSize = new kakao.maps.Size(50, 52); // 마커이미지의 크기입니다
   const imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
   const markerImage = new kakao.maps.MarkerImage(
