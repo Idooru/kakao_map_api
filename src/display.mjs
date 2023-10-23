@@ -1,28 +1,27 @@
-const requestBackend = async () => {
-  const myX = 127.02829779581167;
-  const myY = 37.499855842189014;
-  const myCoordinate = { myX, myY };
-
-  const { data } = await axios
-    .get(
-      `http://localhost:8080/search-api?x=${myX}&y=${myY}&radius=1000&size=15&keyword=일식&page=1`,
-    )
-    .catch((err) => console.error(err));
-
-  await displayPage(data, myCoordinate);
-};
-
-const displayPage = async (data, myCoordinate) => {
-  const keyword = data.result.keyword;
-  const shops = data.result.documents;
-
-  const shopInfo = {
-    shops,
-    keyword: data.result.keyword,
-  };
+export const displayPage = (shopInfo, myCoordinate) => {
+  const { shops } = shopInfo;
 
   displayShopInfo(shopInfo);
   displayMap(shops, myCoordinate);
+};
+
+export const displayNearDistanceShop = (nearDistanceShop) => {
+  nearDistanceShop.forEach((shop, idx) => {
+    const shopInfoListEle = document.querySelector(".shop_info_list");
+    const shops = Array.from(shopInfoListEle.children);
+
+    const placeNameEle = shops[idx].querySelector("#place_name");
+    const addressNameEle = shops[idx].querySelector("#address_name");
+    const distanceEle = shops[idx].querySelector("#distance");
+    const phoneEle = shops[idx].querySelector("#phone");
+    const detailEle = shops[idx].querySelector("#detail");
+
+    placeNameEle.innerText = shop.place_name;
+    addressNameEle.innerText = shop.address_name;
+    distanceEle.innerText = shop.distance + "m";
+    phoneEle.innerText = shop.phone;
+    detailEle.innerText = "상세 페이지";
+  });
 };
 
 const displayShopInfo = ({ shops, keyword }) => {
@@ -96,7 +95,7 @@ const displayMap = (shops, myCoordinate) => {
   const map = new kakao.maps.Map(container, options);
 
   displayMyCoordinate(map, myCoordinate);
-  displayShopCoordinate(map, shops, myCoordinate);
+  displayShopCoordinate(map, shops);
 };
 
 const displayMyCoordinate = (map, { myX, myY }) => {
@@ -124,8 +123,7 @@ const displayMyCoordinate = (map, { myX, myY }) => {
   marker.setMap(map);
 };
 
-const displayShopCoordinate = (map, shops, myCoordinate) => {
-  const { myX, myY } = myCoordinate;
+const displayShopCoordinate = (map, shops) => {
   const { kakao } = window;
 
   shops.forEach((shop) => {
@@ -138,5 +136,3 @@ const displayShopCoordinate = (map, shops, myCoordinate) => {
     marker.setMap(map);
   });
 };
-
-window.addEventListener("load", requestBackend);
