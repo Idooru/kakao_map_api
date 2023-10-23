@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "npx live-server --port=8081"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +15,8 @@
     "prettier": "^3.0.3"
   },
   "prettier": {
-  "tabWidth": 2,
-  "singleQuote": false,
-  "trailingComma": "all"
- }
+    "tabWidth": 2,
+    "singleQuote": false,
+    "trailingComma": "all"
+  }
 }
