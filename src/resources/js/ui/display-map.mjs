@@ -8,7 +8,7 @@ export const displayMap = (shops, myCoordinate) => {
   const container = document.querySelector("#map");
   const options = {
     center: new kakao.maps.LatLng(myY, myX),
-    level: 1,
+    level: 4,
   };
 
   const map = new kakao.maps.Map(container, options);
@@ -16,4 +16,3 @@ export const displayMap = (shops, myCoordinate) => {
   displayMyCoordinate(map, myCoordinate);
   displayShopCoordinate(map, shops);
 };
-
