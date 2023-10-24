@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1><a id="redirect" href="./index.html?my">이동</a></h1>
+  </body>
+  <script>
+    const request = {
+      myX: 127.02829779581167,
+      myY: 37.499855842189014,
+      keyword: "한식",
+    };
+
+    const aEle = document.querySelector("#redirect");
+    const redirectUri = `./index.html?x=${request.myX}&y=${request.myY}&keyword=${request.keyword}`;
+    aEle.setAttribute("href", redirectUri);
+  </script>
+</html>
