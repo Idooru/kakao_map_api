@@ -13,6 +13,7 @@ const getData = async ({ myX, myY, page, keyword }) => {
 export const requestBackend = async (page) => {
   if (!page) {
     page = "1";
+    localStorage.setItem("page", page);
   }
 
   const request = {
@@ -30,7 +31,8 @@ export const requestBackend = async (page) => {
   };
 
   const myCoordinate = { myX: request.myX, myY: request.myY };
-  displayPage(shopInfo, myCoordinate);
+  displayPage(shopInfo, myCoordinate, page);
+
   return { shopInfo, myCoordinate };
 };
 
