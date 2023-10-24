@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #ffe16f;
+  background: #ffd32f;
 }
 
 #map {
@@ -19,52 +19,65 @@ body {
   display: none;
 }
 
+.button_style {
+  outline: none;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  background: white;
+  -webkit-appearance: none;
+  font-weight: bold;
+  color: #ff8a00;
+}
+
+.button_style:hover {
+  background: #ff8a00;
+  color: white;
+  cursor: pointer;
+}
+
 .shop_info_area {
   position: absolute;
   width: 500px;
-  height: 730px;
-  padding: 40px;
-  background: #f6efdd;
-  border-radius: 20px;
+  /*height: 740px;*/
+  /*padding: 40px;*/
+  background: #ffeeae;
   z-index: 999;
   top: 20px;
   left: 20px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  /*justify-content: center;*/
+  border-radius: 20px;
 }
 
 .shop_info_area .shop_info_head {
   display: flex;
   justify-content: center;
+  padding: 40px 40px 0;
+  background: #ffe286;
+  border-radius: 20px 20px 0 0;
 }
 
-.shop_info_area .head_box {
+.shop_info_area .shop_info_head .head_box {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 7.5px;
-  border-bottom: 2px solid rgba(199, 193, 156, 0.65);
+  padding-bottom: 8px;
   width: 460px;
 }
 
 .shop_info_area .shop_info_head #search_keyword {
   width: 260px;
   font-size: 27px;
-  color: #8a7961;
+  color: #000000;
 }
 
 .shop_info_area .shop_info_head #option {
-  outline: none;
-  text-align: center;
-  border: none;
-  padding: 10px;
-  border-radius: 7px;
-  background: rgba(199, 193, 156, 0.65);
+  margin-left: 5px;
   -webkit-appearance: none;
-  font-weight: bold;
-  color: #8a7961;
 }
 
 .shop_info_area .shop_info_list {
+  background: white;
   height: 650px;
   overflow-y: scroll;
 }
@@ -83,13 +96,13 @@ body {
   margin: 20px;
   padding: 13px;
   background: #ffffff;
-  border: 2px solid #ffffff;
+  border: 3px solid #ffe286;
   border-radius: 6px;
 }
 
 .shop_info_area .shop_info_list .shop_info_item:hover {
-  border: 2px solid black;
-  background: aliceblue;
+  border: 3px solid #ffa500;
+  background: #fdf97e;
 }
 
 .shop_info_area .shop_info_list .shop_info_item #place_name {
@@ -140,20 +153,10 @@ body {
 }
 
 .shop_info_area .shop_info_footer .shop_page {
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
   margin-top: 14px;
-  padding: 10px;
-  background: white;
-  width: 440px;
+  padding: 7px 7px 15px;
+  width: 150px;
   border-radius: 6px;
-}
-
-.shop_info_area .shop_info_footer .shop_page button {
-  width: 23px;
-  height: 27px;
-  background: #b4fcff;
-  margin-left: 20px;
-  border: 1px solid skyblue;
-  border-radius: 3px;
-  color: #10656b;
 }
