@@ -3,52 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
-    <link rel="stylesheet" href="./resources/css/style.css" />
-    <script
-      defer
-      src="./resources/js/event/page-init.mjs"
-      type="module"
-    ></script>
-    <script
-      defer
-      src="./resources/js/event/page-button.mjs"
-      type="module"
-    ></script>
-    <script
-      defer
-      src="./resources/js/event/select-option.mjs"
-      type="module"
-    ></script>
   </head>
   <body>
-    <h1>카카오 맵 사용하기</h1>
-    <div id="map">
-      <div class="shop_info_area">
-        <div class="shop_info_head">
-          <div class="head_box">
-            <h1 id="search_keyword"></h1>
-            <label for="option"></label
-            ><select id="option" name="option">
-              <option value="">찾기 옵션</option>
-              <option value="distance">거리순</option>
-              <option value="like">좋아요순</option>
-            </select>
-          </div>
-        </div>
-        <div class="shop_info_list"></div>
-        <div class="shop_info_footer">
-          <div class="shop_page">
-            <button value="1">1</button>
-            <button value="2">2</button>
-            <button value="3">3</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script
-      type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63b8ebc69249405099357fc9285963b1"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <h1><a id="redirect">이동</a></h1>
   </body>
+  <script>
+    const request = {
+      myX: 127.02829779581167,
+      myY: 37.499855842189014,
+      keyword: "한식",
+    };
+
+    const aEle = document.querySelector("#redirect");
+    const redirectUri = `./shop-list.html?x=${request.myX}&y=${request.myY}&keyword=${request.keyword}`;
+    aEle.setAttribute("href", redirectUri);
+  </script>
 </html>
