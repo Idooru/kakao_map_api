@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -29,6 +30,8 @@ body {
   -webkit-appearance: none;
   font-weight: bold;
   color: #ff8a00;
+  height: 35px;
+  vertical-align: middle;
 }
 
 .button_style:hover {
@@ -53,7 +56,8 @@ body {
 .shop_info_area .shop_info_head {
   display: flex;
   justify-content: center;
-  padding: 40px 40px 0;
+  align-content: center;
+  height: 80px;
   background: #ffe286;
   border-radius: 20px 20px 0 0;
 }
@@ -61,14 +65,16 @@ body {
 .shop_info_area .shop_info_head .head_box {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 8px;
-  width: 460px;
+  align-items: center;
+  width: 380px;
 }
 
-.shop_info_area .shop_info_head #search_keyword {
-  width: 260px;
+.shop_info_area .shop_info_head .head_box .buttons #search_keyword {
+  width: 180px;
   font-size: 27px;
   color: #000000;
+  text-align: center;
+  letter-spacing: 40px;
 }
 
 .shop_info_area .shop_info_head #option {
@@ -119,7 +125,7 @@ body {
 .shop_info_area .shop_info_list .shop_info_item .middle_item {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .shop_info_area .shop_info_list .shop_info_item .middle_item #address_name {
@@ -134,7 +140,7 @@ body {
 .shop_info_area .shop_info_list .shop_info_item .under_item {
   display: flex;
   justify-content: space-between;
-  margin-top: 7px;
+  margin-top: 3px;
 }
 
 .shop_info_area .shop_info_list .shop_info_item .under_item #phone {
