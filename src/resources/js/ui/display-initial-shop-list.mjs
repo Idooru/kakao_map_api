@@ -1,8 +1,10 @@
+import { createUrlForDetailPage } from "../util/create-url-for-detail-page.js";
+
 export const displayInitialShopList = ({ shops, keyword }) => {
   const searchKeywordEle = document.querySelector("#search_keyword");
   searchKeywordEle.innerText = keyword;
 
-  shops.forEach((item) => {
+  shops.forEach((shop) => {
     const shopInfoListEle = document.querySelector(".shop_info_list");
 
     const shopInfoItemEle = document.createElement("div");
@@ -10,7 +12,7 @@ export const displayInitialShopList = ({ shops, keyword }) => {
 
     const placeNameEle = document.createElement("a");
     placeNameEle.id = "place_name";
-    placeNameEle.innerText = item.place_name;
+    placeNameEle.innerText = shop.place_name;
     placeNameEle.setAttribute("href", "#");
 
     const middleItemEle = document.createElement("div");
@@ -18,11 +20,11 @@ export const displayInitialShopList = ({ shops, keyword }) => {
 
     const addressNameEle = document.createElement("p");
     addressNameEle.id = "address_name";
-    addressNameEle.innerText = item.address_name;
+    addressNameEle.innerText = shop.address_name;
 
     const distanceEle = document.createElement("p");
     distanceEle.id = "distance";
-    distanceEle.innerText = `${item.distance}m`;
+    distanceEle.innerText = `${shop.distance}m`;
 
     const middleItemComposition = [addressNameEle, distanceEle];
     middleItemComposition.forEach((composition) =>
@@ -34,12 +36,14 @@ export const displayInitialShopList = ({ shops, keyword }) => {
 
     const phoneEle = document.createElement("p");
     phoneEle.id = "phone";
-    phoneEle.innerText = item.phone;
+    phoneEle.innerText = shop.phone;
 
     const detailEle = document.createElement("a");
+
     detailEle.id = "detail";
     detailEle.innerText = "상세 페이지";
-    detailEle.setAttribute("href", "#");
+    const url = createUrlForDetailPage(shop);
+    detailEle.setAttribute("href", url);
 
     const underItemComposition = [phoneEle, detailEle];
     underItemComposition.forEach((composition) =>

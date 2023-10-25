@@ -1,3 +1,5 @@
+import { createUrlForDetailPage } from "../util/create-url-for-detail-page.js";
+
 export const displayOtherShopList = (page, shops) => {
   if (localStorage.getItem("page") === page) return;
 
@@ -17,5 +19,7 @@ export const displayOtherShopList = (page, shops) => {
     distanceEle.innerText = shop.distance + "m";
     phoneEle.innerText = shop.phone;
     detailEle.innerText = "상세 페이지";
+    const url = createUrlForDetailPage(shop);
+    detailEle.setAttribute("href", url);
   });
 };
