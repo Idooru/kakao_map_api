@@ -36,12 +36,12 @@ export const displayInitialShopList = ({ shops, keyword }) => {
     phoneEle.id = "phone";
     phoneEle.innerText = item.phone;
 
-    const detailPageEle = document.createElement("a");
-    detailPageEle.id = "detail";
-    detailPageEle.innerText = "상세 페이지";
-    detailPageEle.setAttribute("href", "#");
+    const detailEle = document.createElement("a");
+    detailEle.id = "detail";
+    detailEle.innerText = "상세 페이지";
+    detailEle.setAttribute("href", "#");
 
-    const underItemComposition = [phoneEle, detailPageEle];
+    const underItemComposition = [phoneEle, detailEle];
     underItemComposition.forEach((composition) =>
       underItemEle.append(composition),
     );
