@@ -1,4 +1,4 @@
-export const displayShopCoordinate = (map, shops) => {
+export const displayShopsCoordinate = (map, shops) => {
   const { kakao } = window;
 
   shops.forEach((shop) => {

@@ -1,5 +1,5 @@
 import { displayMyCoordinate } from "./display-my-coordinate.mjs";
-import { displayShopCoordinate } from "./display-shop-coordinate.mjs";
+import { displayShopsCoordinate } from "./display-shop-coordinate.mjs";
 
 export const displayMap = (shops, myCoordinate) => {
   const { myX, myY } = myCoordinate;
@@ -14,5 +14,5 @@ export const displayMap = (shops, myCoordinate) => {
   const map = new kakao.maps.Map(container, options);
 
   displayMyCoordinate(map, myCoordinate);
-  displayShopCoordinate(map, shops);
+  displayShopsCoordinate(map, shops);
 };
