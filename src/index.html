@@ -2,16 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>이동</title>
+    <title>카테고리 리스트</title>
   </head>
   <body>
-    <h1><a id="redirect">이동</a></h1>
+    <h1>카테고리 리스트</h1>
+    <h4><a id="redirect">이동</a></h4>
   </body>
   <script>
+    const keyword = prompt("카테고리를 정해주세요.: ");
+
     const request = {
       myX: 127.02829779581167,
       myY: 37.499855842189014,
-      keyword: "한식",
+      keyword,
     };
 
     const aEle = document.querySelector("#redirect");
